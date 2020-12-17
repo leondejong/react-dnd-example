@@ -1,0 +1,19 @@
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: rgba(223, 223, 223, 1);
+  background: rgba(31, 31, 31, 1);
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
