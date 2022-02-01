@@ -20,7 +20,7 @@ const editable = css`
   }
 `
 
-const Subject = styled.section`
+const Entry = styled.section`
   margin: 0.5rem;
   border-radius: 0.5rem;
   opacity: ${({ dragging }) => (dragging ? '0.5' : '1')};
@@ -59,10 +59,11 @@ const Handle = styled.div`
   }
 `
 
-export default ({ data, parent }) => {
+const Subject = ({ data, parent }) => {
   const [, dispatch] = useStateReducer()
 
   const [{ isDragging }, drag, preview] = useDrag({
+    type: 'item',
     item: { type: 'item', item: data, parent },
     collect: monitor => ({
       isDragging: monitor.isDragging()
@@ -92,7 +93,7 @@ export default ({ data, parent }) => {
   }
 
   return (
-    <Subject ref={preview} color={data.color}>
+    <Entry ref={preview} color={data.color}>
       <Handle ref={drag} dragging={isDragging} />
       <AddButton title='Add card' onClick={addSubject} />
       <RemoveButton title='Remove card' onClick={removeSubject} />
@@ -109,6 +110,8 @@ export default ({ data, parent }) => {
         {data.content}
       </ContentEditable>
       <ColorPalette onClick={(_, color) => updateSubject('color', color)} />
-    </Subject>
+    </Entry>
   )
 }
+
+export default Subject

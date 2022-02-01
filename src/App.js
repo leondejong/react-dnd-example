@@ -26,7 +26,7 @@ const Application = styled.div`
   padding: 1rem;
 `
 
-export default () => (
+const App = () => (
   <StateProvider
     state={isObject(persistedState) ? persistedState : exampleState}
     reducer={persistedReducer}
@@ -38,3 +38,5 @@ export default () => (
     </DndProvider>
   </StateProvider>
 )
+
+export default App

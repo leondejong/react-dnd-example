@@ -11,7 +11,7 @@ const Colors = styled.div`
   margin: 0.75rem;
   padding: 0.125rem 0.1875rem;
   border-radius: 0.5rem;
-  background: rgba(31, 31, 31, 1);
+  /* background: rgba(31, 31, 31, 1); */
   background: rgba(255, 255, 255, 1);
   opacity: 0.5;
   &:hover {
@@ -35,7 +35,7 @@ const Color = styled.span`
   }
 `
 
-export default ({ onClick }) => {
+const ColorPalette = ({ onClick }) => {
   return (
     <Colors>
       {Object.values(colors).map(color => (
@@ -44,3 +44,5 @@ export default ({ onClick }) => {
     </Colors>
   )
 }
+
+export default ColorPalette

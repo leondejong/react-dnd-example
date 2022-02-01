@@ -2,19 +2,20 @@ const red = 'rgba(239, 79, 119, 1)'
 const orange = 'rgba(239, 123, 107, 1)'
 const yellow = 'rgba(239, 175, 127, 1)'
 const green = 'rgba(95, 175, 127, 1)'
-const cyan = 'rgba(63,  175, 175, 1)'
+const cyan = 'rgba(0, 143, 143, 1)'
 const blue = 'rgba(0, 87, 158, 1)'
-const purple = 'rgba(87, 63, 159, 1)'
+const indigo = 'rgba(87, 63, 159, 1)'
+const violet = 'rgba(159, 63, 159, 1)'
 const dark = 'rgba(63, 63, 63, 1)'
 
-const colors = { red, orange, yellow, green, cyan, blue, purple }
+const colors = { red, orange, yellow, green, cyan, blue, indigo, violet }
 
 const structure = {
   id: 'root',
   nodes: [
     { id: 1, nodes: [{ id: 4 }, { id: 5 }, { id: 6 }] },
     { id: 2, nodes: [{ id: 7 }, { id: 8 }] },
-    { id: 3, nodes: [{ id: 9 }] }
+    { id: 3, nodes: [{ id: 9 }, { id: 10 }] }
   ]
 }
 
@@ -83,7 +84,16 @@ const entities = {
       <br />
       ...
     `,
-    color: purple
+    color: violet
+  },
+  10: {
+    name: 'Feature 7',
+    content: `
+      Description
+      <br />
+      ...
+    `,
+    color: indigo
   }
 }
 
@@ -97,7 +107,7 @@ export const state = {
 
 export const example = {
   name: 'Features',
-  id: 9,
+  id: 10,
   structure,
   entities,
   colors

@@ -33,7 +33,7 @@ const Title = styled.h1`
   }
 `
 
-export default () => {
+const Overview = () => {
   const [{ entities, structure, name }, dispatch] = useStateReducer()
 
   const data = fill(structure, entities)
@@ -85,3 +85,5 @@ export default () => {
     </>
   )
 }
+
+export default Overview

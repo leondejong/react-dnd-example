@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default props => {
+const ContentEditable = props => {
   const { tag: Tag = 'div', onInput = () => {}, children, attributes } = props
   const [html] = useState(children)
   return (
@@ -13,3 +13,5 @@ export default props => {
     />
   )
 }
+
+export default ContentEditable

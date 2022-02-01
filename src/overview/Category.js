@@ -13,7 +13,7 @@ import {
   RemoveButton
 } from '../components'
 
-const Category = styled.section`
+const Column = styled.section`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@ const Title = styled.h3`
   }
 `
 
-export default ({ data }) => {
+const Category = ({ data }) => {
   const element = useRef()
   const [indicator, setIndicator] = useState(0)
   const [, dispatch] = useStateReducer()
@@ -128,7 +128,7 @@ export default ({ data }) => {
   }
 
   return (
-    <Category over={isOver} color={data.color}>
+    <Column over={isOver} color={data.color}>
       <ContentEditable
         tag={Title}
         onInput={e => updateCategory('name', e.target.innerHTML)}
@@ -140,6 +140,8 @@ export default ({ data }) => {
       <Content ref={drop(element)} indicator={indicator} over={isOver}>
         {content()}
       </Content>
-    </Category>
+    </Column>
   )
 }
+
+export default Category
